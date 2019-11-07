@@ -1,0 +1,24 @@
+{
+	"manifest_version": 2,
+	"name": "AFLW Fixture data converter",
+	"version": "0.1",
+	"description": "grabs the data from the aflw website and converts it so i can use on tipping-comp",
+	"homepage_url": "http://www.blott.com.au",
+
+	"browser_action": {
+		"default_icon": "images/icon.png"
+	},
+  
+	"content_scripts": [
+		{
+			"matches": ["https://womens.afl/matches/2020"],
+			"js": ["src/jquery-3.3.1.js", "src/load.js"],
+			"run_at": "document_end"
+		}
+	],
+
+	
+	"permissions": [
+		"activeTab"
+	]
+}
