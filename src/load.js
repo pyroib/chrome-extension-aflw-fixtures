@@ -1,20 +1,10 @@
-
-/*
-document.onmouseup = document.onkeyup = document.onselectionchange = function() {
-    var content = window.getSelection().toString();
-    chrome.storage.sync.set({ content });
-};
-
-
-var code = document.getElementById('code');
-chrome.storage.sync.get(stored => {
-  code.value = stored.content
-});
-*/
+// make sure jquery get loaded
 var x = document.createElement("SCRIPT");
 x.src = "https://code.jquery.com/jquery-3.3.1.js";
 document.head.appendChild(x);
 
+// just a lists of UUID's that were generated, 
+// this needs to be created every time new inserts are created
 var guids = [
 	'DA7A95F5-6568-4E0C-9B09-E1CB90089B1A',
 	'9085BA83-2D35-4BDA-B9A7-73C5D08C80C1',
@@ -1512,6 +1502,7 @@ var guids = [
 	'CA79809B-0438-4DD8-A773-4FC7A843FD46'
 ];
 
+// DB relationship data for teams
 var teamhash = {
 	'Adelaide Crows':'6874B13E-E14F-4B81-940D-198B2FE2A1CD',
 	'Brisbane Lions':'461E753C-C3FD-478F-985F-5E6326A3C2E0', 
@@ -1538,14 +1529,19 @@ var teamhash = {
 
 $( document ).ready(function() {
 
+	// propably wont ever need this, just a flag for INSERT or UPDATE SQL statements
 	var action = "insert";
+	
+	// the AFLW comp ID
 	var comp = 'C620F12D-7718-47D0-B6B9-E3444358BD6F';
+	
+	// the 2020 season ID
 	var season = 'FD238FE7-75BF-2020-8049-637485685032';
 	
+	// just a number so we can reference the guids array
 	var count = 0;
 	
-	// insert
-	
+		
 	// hide the round titles
 	$('.match-list__round').each(function(i){
 		$(this).hide();
@@ -1608,12 +1604,4 @@ $( document ).ready(function() {
 			
 		}
 	});	
-
-
-	// update
-	$('.match-list__item').each(function(i){
-
-	});
-
-
 });
