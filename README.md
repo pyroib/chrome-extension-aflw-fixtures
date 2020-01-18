@@ -1,4 +1,4 @@
-# AFLW fixture conerter
+# AFLW fixture converter
 
 A extension that edits the AFLW fixture page into update or insert SQL queries for the tipping-comp system.
 
